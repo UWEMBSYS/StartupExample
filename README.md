@@ -8,7 +8,7 @@ The output format is ELF ([See wikipedia here](https://en.wikipedia.org/wiki/Exe
 *  Only addresses and structures relevant to the task are provided in the header file
 * The C library relocation/initialization provided by IAR is not used to illustrate all of the steps needed to startup a system. 
 * The code is not relocated, it is execute in place from the internal flash.
-* CMSIS is not used either
+* CMSIS is used to access the core registers. (Cortex Microcontroller Software Interface Standard)
 
 ---
 
@@ -24,6 +24,11 @@ References, with current links:
 ([STM32F401RE datasheet, contains overview, pin multiplex options ...]        (http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00102166.pdf))
 
 ([STm32F401 Reference Manual, contains descripts of al lof the peripherals]       ( http://www.st.com/st-web-ui/static/active/en/resource/technical/document/reference_manual/DM00096844.pdf))
+
+([CMSIS] (http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php))
+
+([Keil has some decent docs on CMSIS] (http://www.keil.com/pack/doc/cmsis/core/html/modules.html))
+
 
 ---
 
