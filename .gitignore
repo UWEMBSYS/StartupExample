@@ -32,4 +32,7 @@
 *.dSYM/
 
 Debug/
+Settings/
+*.dep
+*.ewd
 

@@ -1,0 +1,15 @@
+"--endian=little" 
+
+"--cpu=Cortex-M4" 
+
+"--fpu=None" 
+
+"--semihosting" 
+
+"--stlink_reset_strategy=0,0" 
+
+"--drv_swo_clock_setup=72000000,0,2000000" 
+
+
+
+
