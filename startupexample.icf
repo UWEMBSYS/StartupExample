@@ -1,0 +1,19 @@
+
+
+
+/* the addressable area */
+define memory mem with size = 4G;
+
+/* location of internal flash and internal sram */
+define region ROM_region   =   mem:[from 0x08000000 to 0x0803ffff];
+define region RAM_region   =   mem:[from 0x20000000 to 0x20007FFF];
+                       
+define block CSTACK with alignment = 8, size =0x400   { };
+
+initialize by copy { readwrite };
+
+do not initialize  { section .noinit };
+ 
+place at address mem:0x08000000 { readonly section .intvec };
+place in ROM_region  { readonly };
+place in RAM_region  { readwrite, block CSTACK };
