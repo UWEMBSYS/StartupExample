@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Startupexample by UWEMBSYS</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Startupexample</h1>
+        <p>Example startup code for Nucleo 401RE target. Configures systick IRQ, basic clocks, ungates GPIO, relocation and initialization of C library regions and flashes a LED in main</p>
+        <p class="view"><a href="https://github.com/UWEMBSYS/StartupExample">View the Project on GitHub <small>UWEMBSYS/StartupExample</small></a></p>
+        <ul>
+          <li><a href="https://github.com/UWEMBSYS/StartupExample/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/UWEMBSYS/StartupExample/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/UWEMBSYS/StartupExample">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="startupexample" class="anchor" href="#startupexample" aria-hidden="true"><span class="octicon octicon-link"></span></a>StartupExample</h1>
+
+<p>Example startup code for Nucleo 401RE target.
+Configures systick IRQ, basic clocks, ungates GPIO, (relocation) and initialization of C library regions and flashes a LED in main</p>
+
+<p>The output format is ELF (<a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">See wikipedia here</a>)</p>
+
+<ul>
+<li>Coding style is left at IAR default.</li>
+<li> Only addresses and structures relevant to the task are provided in the header file</li>
+<li>The C library relocation/initialization provided by IAR is not used to illustrate all of the steps needed to startup a system. </li>
+<li>The code is not relocated, it is execute in place from the internal flash.</li>
+<li>CMSIS is not used either</li>
+</ul>
+
+<hr>
+
+<p>References, with current links:</p>
+
+<p>(<a href="http://supp.iar.com/FilesPublic/UPDINFO/005832/arm/doc/EWARM_AssemblerReference.ENU.pdf">IAR assembler Reference</a>)
+(<a href="http://infocenter.arm.com/help/topic/com.arm.doc.100166_0001_00_en/arm_cortexm4_processor_trm_100166_0001_00_en.pdf">Cortex M4 references, describes the core, busses and programming models</a>)</p>
+
+<p>(<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0403e.b/index.html">ARMv7M Architecture Reference manual, explains instruction set, memory models, exception models... (need to register with ARM)</a>)</p>
+
+<p>(<a href="http://www.stack.nl/%7Edimitri/doxygen/manual/index.html">Doxygen, used to embedded code comments for later use in documentation</a>)</p>
+
+<p>(<a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00102166.pdf">STM32F401RE datasheet, contains overview, pin multiplex options ...</a>)</p>
+
+<p>(<a href="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/reference_manual/DM00096844.pdf">STm32F401 Reference Manual, contains descripts of al lof the peripherals</a>)</p>
+
+<hr>
+
+<p>This is free and unencumbered software released into the public domain.</p>
+
+<p>Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.</p>
+
+<p>In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>For more information, please refer to <a href="http://unlicense.org/">http://unlicense.org/</a></p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/UWEMBSYS">UWEMBSYS</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
