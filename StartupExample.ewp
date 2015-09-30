@@ -30,7 +30,7 @@
         <option>
           <name>Variant</name>
           <version>21</version>
-          <state>39</state>
+          <state>40</state>
         </option>
         <option>
           <name>GEndianMode</name>
@@ -61,11 +61,11 @@
         <option>
           <name>FPU</name>
           <version>4</version>
-          <state>0</state>
+          <state>6</state>
         </option>
         <option>
           <name>OGCoreOrChip</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>GRuntimeLibSelect</name>
@@ -99,7 +99,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>Default	None</state>
+          <state>STM32F401xE	ST STM32F401xE</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
@@ -138,16 +138,16 @@
         <option>
           <name>GFPUCoreSlave</name>
           <version>21</version>
-          <state>39</state>
+          <state>40</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
           <version>21</version>
-          <state>39</state>
+          <state>40</state>
         </option>
         <option>
           <name>OGUseCmsis</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OGUseCmsisDspLib</name>
@@ -297,7 +297,7 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state></state>
+          <state>C:\Users\gsmith\Projects\embsys110\StartupExample\inc</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1898,6 +1898,15 @@
       <name>$PROJ_DIR$\inc\clocks.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\inc\globals.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\inc\interrupts.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\inc\nucleoboard.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\inc\pinmux.h</name>
     </file>
     <file>
@@ -1917,6 +1926,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\src\datainit.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\globals.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\interrupts.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\src\main.c</name>

@@ -48,53 +48,68 @@
 ;   The information is not executable, it is a list of pointers
       DATA
 __vector_table  
-      DCD       SFE(CSTACK)             ; Stack Pointer will be set to this (SFE means Section End, ie the highest address in the section)
-      DCD       ResetHandler            ; Reset. (This points to the first piece of code that will execute at power on)
-      DCD       NMIHandler              ; NMI
-      DCD       HardFaultHandler        ; Hard Fault
-      DCD       MemManageHandler        ; MPU Fault
-      DCD       BusFaultHandler         ; Bus Fault
-      DCD       UsageFaultHandler       ; Usage Fault
+      DCD       SFE(CSTACK)                 ; Stack Pointer will be set to this (SFE means Section End, ie the highest address in the section)
+      DCD       ResetIrqHandler             ; Reset. (This points to the first piece of code that will execute at power on)
+      DCD       NMIIrqHandler               ; NMI
+      DCD       HardFaultIrqHandler         ; Hard Fault
+      DCD       MemManageIrqHandler         ; MPU Fault
+      DCD       BusFaultIrqHandler          ; Bus Fault
+      DCD       UsageFaultIrqHandler        ; Usage Fault
       DCD       0
       DCD       0
       DCD       0
       DCD       0
-      DCD       SVCHandler              ; SVC 
-      DCD       DebugHandler            ; Debug Monitor
+      DCD       SVCIrqHandler               ; SVC 
+      DCD       DebugIrqHandler             ; Debug Monitor
       DCD       0                       
       DCD       0
-      DCD       SysTickHandler          ; SysTick
+      DCD       SysTickIrqHandler           ; SysTick
 
-      ; The STM32F401 specific interrupt vectors would Follow
+      ; The STM32F401 specific interrupt vectors  Follow
+      DCD     UnusedIrqHandler              ; WatchDog
+      DCD     UnusedIrqHandler              ; PVD through EXTI Line detection
+      DCD     UnusedIrqHandler              ; Tamper and TimeStamps through the EXTI line
+      DCD     UnusedIrqHandler              ; RTC Wakeup through the EXTI line
+      DCD     UnusedIrqHandler              ; Flash 
+      DCD     UnusedIrqHandler              ; RCC  - Clocks
+      DCD     EXTI0IRQHandler               ; EXTI Line0
+      
+     
+      ; There are more IRQs that are not added here......
+      
+      
       ; These are in the code section (.text)
       SECTION   .text:CODE:ROOT
       
       ; Stub IRQ handlers
-      PUBWEAK  NMIHandler
-NMIHandler      
-      PUBWEAK  HardFaultHandler
-HardFaultHandler      
-      PUBWEAK  MemManageHandler
-MemManageHandler      
-      PUBWEAK  BusFaultHandler
-BusFaultHandler      
-      PUBWEAK  UsageFaultHandler
-UsageFaultHandler      
-      PUBWEAK  SVCHandler
-SVCHandler      
-      PUBWEAK  DebugHandler
-DebugHandler      
-      PUBWEAK  SysTickHandler       ; This one will be overridden in C code
-SysTickHandler      
-__stub_irq_handler      
-      B         __stub_irq_handler      ; Loop forever
+      PUBWEAK  NMIIrqHandler
+      PUBWEAK  HardFaultIrqHandler
+      PUBWEAK  MemManageIrqHandler
+      PUBWEAK  BusFaultIrqHandler
+      PUBWEAK  UsageFaultIrqHandler
+      PUBWEAK  SVCIrqHandler
+      PUBWEAK  DebugIrqHandler
+      PUBWEAK  SysTickIrqHandler
+      PUBWEAK  EXTI0IRQHandler
+NMIIrqHandler      
+HardFaultIrqHandler      
+MemManageIrqHandler      
+BusFaultIrqHandler
+UsageFaultIrqHandler      
+SVCIrqHandler      
+DebugIrqHandler      
+SysTickIrqHandler
+EXTI0IRQHandler
+
+UnusedIrqHandler           
+      B         UnusedIrqHandler      ; Loop forever
+PUBWEAK  
+ 
       
-      
-      EXTERN  __iar_program_start
-      PUBLIC  ResetHandler
+      PUBLIC  ResetIrqHandler
       EXTERN  main
       ; Define what happens at reset.
-ResetHandler
+ResetIrqHandler
       
       ; The IAR library handles this usually, but for this sample it will be done manually
       ; for educational purposes

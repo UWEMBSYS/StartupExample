@@ -45,7 +45,7 @@
         </option>
         <option>
           <name>MemFile</name>
-          <state></state>
+          <state>$TOOLKIT_DIR$\CONFIG\debugger\ST\STM32F401xE.ddf</state>
         </option>
         <option>
           <name>RunToEnable</name>
@@ -117,7 +117,7 @@
         </option>
         <option>
           <name>FlashLoadersV3</name>
-          <state>$TOOLKIT_DIR$\config\flashloader\</state>
+          <state>$TOOLKIT_DIR$\config\flashloader\ST\FlashSTM32F401xE.board</state>
         </option>
         <option>
           <name>OCImagesSuppressCheck1</name>
@@ -1202,7 +1202,7 @@
         </option>
         <option>
           <name>CCSTLinkInterfaceRadio</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCSTLinkInterfaceCmdLine</name>

@@ -12,14 +12,6 @@
       <name>C-STAT</name>
       <archiveVersion>1</archiveVersion>
       <data>
-        <version>1</version>
-        <cstatargs>
-          <useExtraArgs>0</useExtraArgs>
-          <extraArgs></extraArgs>
-          <analyzeTimeout>600</analyzeTimeout>
-          <enableParallel>0</enableParallel>
-          <parallelThreads>1</parallelThreads>
-        </cstatargs>
         <cstatsettings>
           <package checked="true" name="STDCHECKS">
             <group checked="true" name="ARR">
@@ -1068,14 +1060,6 @@
       <name>C-STAT</name>
       <archiveVersion>1</archiveVersion>
       <data>
-        <version>1</version>
-        <cstatargs>
-          <useExtraArgs>0</useExtraArgs>
-          <extraArgs></extraArgs>
-          <analyzeTimeout>600</analyzeTimeout>
-          <enableParallel>0</enableParallel>
-          <parallelThreads>1</parallelThreads>
-        </cstatargs>
         <cstatsettings>
           <package checked="true" name="STDCHECKS">
             <group checked="true" name="ARR">
@@ -2126,6 +2110,15 @@
       <name>$PROJ_DIR$\inc\clocks.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\inc\globals.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\inc\interrupts.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\inc\nucleoboard.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\inc\pinmux.h</name>
     </file>
     <file>
@@ -2145,6 +2138,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\src\datainit.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\globals.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\interrupts.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\src\main.c</name>
