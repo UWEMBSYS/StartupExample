@@ -1,3 +1,8 @@
+/**
+ * datainit.c
+ * Overlay the initialization data onto the RAM region that contains them
+ * Zero initialize the bss section
+ */
 #include <stdint.h>
 
 /*

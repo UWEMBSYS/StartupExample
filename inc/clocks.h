@@ -1,5 +1,4 @@
 #pragma once
-
 /**
  * clocks.h
  * The Nucleo board has no external clock (HSE) therefore the internal clock is used (HSI)

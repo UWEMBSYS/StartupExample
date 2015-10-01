@@ -1,6 +1,6 @@
 /**
  * nucleoboard.h
- * board specific definitions live here
+ * Board specific definitions live here
  * These generally come from the Nucleo schematics
  */
 #include <stm32f401.h>

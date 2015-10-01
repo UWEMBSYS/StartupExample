@@ -72,8 +72,41 @@ __vector_table
       DCD     UnusedIrqHandler              ; RTC Wakeup through the EXTI line
       DCD     UnusedIrqHandler              ; Flash 
       DCD     UnusedIrqHandler              ; RCC  - Clocks
-      DCD     EXTI0IRQHandler               ; EXTI Line0
-      
+      DCD     EXTI0IrqHandler               ; EXTI Line0
+      DCD     EXTI1IrqHandler               ; EXTI Line1
+      DCD     EXTI2IrqHandler               ; EXTI Line2
+      DCD     EXTI3IrqHandler               ; EXTI Line3
+      DCD     EXTI4IrqHandler               ; EXTI Line4
+      DCD     UnusedIrqHandler              ; DMA1 Stream 0
+      DCD     UnusedIrqHandler              ; DMA1 Stream 1
+      DCD     UnusedIrqHandler              ; DMA1 Stream 2
+      DCD     UnusedIrqHandler              ; DMA1 Stream 3
+      DCD     UnusedIrqHandler              ; DMA1 Stream 4
+      DCD     UnusedIrqHandler              ; DMA1 Stream 5
+      DCD     UnusedIrqHandler              ; DMA1 Stream 6
+      DCD     UnusedIrqHandler              ; ADC1
+      DCD     0
+      DCD     0
+      DCD     0
+      DCD     0
+      DCD     EXTI5Thru9IrqHandler          ; EXTI Lines 5->9
+      DCD     UnusedIrqHandler              ; TIM1 Break and TIM9
+      DCD     UnusedIrqHandler              ; TIM1 Update and TIM10
+      DCD     UnusedIrqHandler              ; TIM1 Trigger and Commutation and TIM11
+      DCD     UnusedIrqHandler              ; TIM1 Capture Compare
+      DCD     UnusedIrqHandler              ; TIM2
+      DCD     UnusedIrqHandler              ; TIM3
+      DCD     UnusedIrqHandler              ; TIM4
+      DCD     UnusedIrqHandler              ; I2C1 Event
+      DCD     UnusedIrqHandler              ; I2C1 Error
+      DCD     UnusedIrqHandler              ; I2C2 Event
+      DCD     UnusedIrqHandler              ; I2C2 Error
+      DCD     UnusedIrqHandler              ; SPI1
+      DCD     UnusedIrqHandler              ; SPI2
+      DCD     UnusedIrqHandler              ; USART1
+      DCD     UnusedIrqHandler              ; USART2
+      DCD     0
+      DCD     EXTI10Thru15IrqHandler        ; EXTI Lines 10 -> 15
      
       ; There are more IRQs that are not added here......
       
@@ -90,21 +123,34 @@ __vector_table
       PUBWEAK  SVCIrqHandler
       PUBWEAK  DebugIrqHandler
       PUBWEAK  SysTickIrqHandler
-      PUBWEAK  EXTI0IRQHandler
-NMIIrqHandler      
-HardFaultIrqHandler      
+      PUBWEAK  EXTI0IrqHandler
+      PUBWEAK  EXTI1IrqHandler
+      PUBWEAK  EXTI2IrqHandler
+      PUBWEAK  EXTI3IrqHandler
+      PUBWEAK  EXTI4IrqHandler 
+      PUBWEAK  EXTI5Thru9IrqHandler
+      PUBWEAK  EXTI10Thru15IrqHandler
+      
+NMIIrqHandler 
 MemManageIrqHandler      
 BusFaultIrqHandler
 UsageFaultIrqHandler      
 SVCIrqHandler      
 DebugIrqHandler      
 SysTickIrqHandler
-EXTI0IRQHandler
+EXTI0IrqHandler
+EXTI1IrqHandler
+EXTI2IrqHandler
+EXTI3IrqHandler
+EXTI4IrqHandler
+EXTI5Thru9IrqHandler
+EXTI10Thru15IrqHandler
 
 UnusedIrqHandler           
       B         UnusedIrqHandler      ; Loop forever
-PUBWEAK  
- 
+
+HardFaultIrqHandler
+      B         HardFaultIrqHandler
       
       PUBLIC  ResetIrqHandler
       EXTERN  main

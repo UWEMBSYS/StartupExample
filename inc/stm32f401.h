@@ -1,3 +1,4 @@
+#pragma once
 /**
  * stm32f401.h
  * \brief Contains addresses and layouts of the peripherals used on the STM32F401 by this project
@@ -27,6 +28,9 @@ typedef enum
   EXTI2_IRQn                  = 8,      /*!< EXTI Line2 */
   EXTI3_IRQn                  = 9,      /*!< EXTI Line3 */
   EXTI4_IRQn                  = 10,     /*!< EXTI Line4 */
+  EXTI9_5_IRQn                = 23,     /*!< EXTI Line 5->9 */
+  EXTI15_10_IRQn              = 40,     /*!< EXTI Lines 10->15 */
+  
 } IRQn_Type;
 
 /**
@@ -153,7 +157,7 @@ typedef struct
 {
   vu32 MEMRMP;          /*!< memory remap */
   vu32 PMC;             /*!< peripheral mode configuration */
-  vu32  EXTICR[4];      /*!< external interrupt configuration */
+  vu32 EXTICR[4];       /*!< external interrupt configuration */
   vu32 Rsvd[2];
   vu32 CMPCR;           /*!< Compensation cell control */
 } Syscfg_t;
@@ -187,23 +191,41 @@ typedef struct
 #define GPIO_MODER_OUTPUT       0x1
 #define GPIO_MODER_ALTFUNC      0x2
 #define GPIO_MODER_ANALOG       0x3
+#define GPIO_MODER_MASK         0x3
+
+/* Helper macro to correctly shift the mode mask */
+#define GPIO_MODER_SET(pin,mode) (mode << (pin*2))
 
 #define GPIO_OTYPER_PP          0
+#define GPIO_OTYPER_OD          1
+#define GPIO_OTYPER_MASK        1
+/* Helper macro to correctly shift the Output typemask */
+#define GPIO_OTYPER_SET(pin,mode) (mode << (pin))
 
 #define GPIO_PUPDR_NONE         0
 #define GPIO_PUPDR_PU           1
 #define GPIO_PUPDR_PD           2
+#define GPIO_PUPDR_MASK         3
+
+/* Helper macro to correctly shift the Pull up/down mask */
+#define GPIO_PUPDR_SET(pin,mode) (mode << (pin*2))
 
 
 
 /* RCC register bits */
-#define  RCC_AHB1ENR_GPIOAEN                 (1<<0)
-#define  RCC_AHB1ENR_GPIOBEN                 (1<<1)
-#define  RCC_AHB1ENR_GPIOCEN                 (1<<2)
-#define  RCC_AHB1ENR_GPIODEN                 (1<<3)
-#define  RCC_AHB1ENR_GPIOEEN                 (1<<4)
+#define RCC_AHB1ENR_GPIOAEN            (1<<0)
+#define RCC_AHB1ENR_GPIOBEN            (1<<1)
+#define RCC_AHB1ENR_GPIOCEN            (1<<2)
+#define RCC_AHB1ENR_GPIODEN            (1<<3)
+#define RCC_AHB1ENR_GPIOEEN            (1<<4)
 
-#define  RCC_APB1ENR_PWREN                   (1<<28)
+#define RCC_APB1ENR_PWREN              (1<<28)
+#define RCC_APB2ENR_SYSCFGEN           (1<<14)
 
-
-
+/* Syscfg bits*/
+#define SYSCFG_EXTICR_PA                (0x0)
+#define SYSCFG_EXTICR_PB                (0x1)
+#define SYSCFG_EXTICR_PC                (0x2)
+#define SYSCFG_EXTICR_PD                (0x3)
+#define SYSCFG_EXTICR_PE                (0x4)
+#define SYSCFG_EXTICR_PH                (0x7)
