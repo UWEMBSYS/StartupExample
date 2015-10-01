@@ -2,6 +2,8 @@
 Example startup code for Nucleo 401RE target.
 Configures systick IRQ, basic clocks, ungates GPIO, (relocation) and initialization of C library regions and flashes a LED in main
 
+([The documents are in this repository] (https://github.com/UWEMBSYS/Documentation))
+
 The output format is ELF ([See wikipedia here](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format))
 
 * Coding style is left at IAR default.
